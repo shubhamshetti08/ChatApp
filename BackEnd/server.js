@@ -14,7 +14,7 @@ const routes = require('../BackEnd/Routes/routes');
 const dbCon = require('./Configuration/database.config');
 const expressValidator=require('express-validator');
 const app = express();
-
+require('dotenv').config();
 
 
 mongoose.Promise = global.Promise;
