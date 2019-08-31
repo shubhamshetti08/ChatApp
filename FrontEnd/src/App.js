@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router,Route } from "react-router-dom";
-import Login from './Components/login.jsx';
+import Login from './Pages/login.jsx';
 import './App.css';
-import Register from './Components/register.jsx';
-import ForgotPwd from './Components/forgotPwd.jsx'
-import ResetPwd from './Components/resetPwd.jsx'
-import DashBoard from './Components/dashboard.jsx'
+import Register from './Pages/register.jsx';
+import ForgotPwd from './Pages/forgotPwd.jsx'
+import ResetPwd from './Pages/resetPwd.jsx'
+import Dashboard from './Components/dashboard'
 class App extends Component {
   render() {
     return (
@@ -15,7 +15,7 @@ class App extends Component {
       <Route path="/register" component={Register}></Route>
       <Route path="/forgotpwd" component={ForgotPwd}></Route>
       <Route path="/resetpwd" component={ResetPwd}></Route>
-      <Route path="/dashboard" component={DashBoard}></Route>
+      <Route path="/dashboard" component={Dashboard}></Route>
     </Router>
     );
   }

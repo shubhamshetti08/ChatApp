@@ -1,6 +1,6 @@
 const express=require('express');
 const routes=express.Router();
-const controller=require('../Controler/controller')
+const controller=require('../Controller/controller.js')
 const midware=require('../Middleware/midware')
 routes.route('/login').post(controller.login);
 routes.route('/register').post(controller.register);

@@ -2,13 +2,31 @@ import React from 'react';
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import { Card } from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
 //import { makeStyles } from '@material-ui/core/styles';
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state={
       email:'',
-      password:''
+      password:'',
+      snackbarOpen:false,
+      snackbarMsg:''
+    }
+  }
+  snackbarClose=(e)=>{
+    this.setState({snackbarOpen:false});
+  }
+  handleClick=()=>{
+    console.log(this.state.email.length)
+    console.log(this.state.password)
+    if (this.state.email.length === 0) {
+      this.setState({ snackbarOpen: true,snackbarMsg:"email cannot be empty"  })
+    }if (this.state.password === null || this.state.password.length < 8) {
+      this.setState({ snackbarOpen: true,snackbarMsg:"password should be min 8"  })
+    }else{
+    this.props.history.push('/dashboard');
     }
   }
   handleRegisterClick=()=>{
@@ -32,6 +50,26 @@ export default class Login extends React.Component {
   render() {
     return (
       <Card className="lcard">
+        <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={this.state.snackbarOpen}
+        autoHideDuration={6000}
+        onClose={this.snackbarClose}
+        message={<span id="messege-id">{this.state.snackbarMsg}</span>}
+        action={[
+          <IconButton
+          key="close"
+          arial-label="close"
+          color="inherit"
+          onClick={this.snackbarClose}
+          >
+          
+          </IconButton>
+        ]}
+        />
       <form className="login">
           <h1>Login Page</h1>
           <div>
@@ -65,6 +103,7 @@ export default class Login extends React.Component {
           <div>
             <Button onClick={this.handleClick} variant="contained" color="primary">
               Login
+              
             </Button>
           </div>
           <div className='cbutton'>

@@ -43,16 +43,19 @@ exports.login = (req, res) => {
  */
 exports.register = (req, res) => {
     console.log("data register");
-    req.checkBody('firstName', 'Invalid first name').notEmpty().isAlpha();
-    req.checkBody('lastName', 'Invalid last name').notEmpty().isAlpha();
+    req.checkBody('firstName', 'Invalid first name').isAlpha();
+    req.checkBody('lastName', 'Invalid last name').isAlpha();
     req.checkBody('email', 'Invalid email').isEmail();
    // req.checkBody('password', 'Invalid possword').notEmpty().len(5, 30);
-    req.checkBody('password', 'Invalid possword').notEmpty().len(5, 30);
+    req.checkBody('password', 'Invalid possword').isLength({
+        min:8
+    });
     errors = req.validationErrors();
     var response = {};
     if (errors) {
         response.error = errors;
         response.success = false;
+        console.log(response)
         return res.status(422).send(response);
     } else {
         services.register(req, (err, data) => {

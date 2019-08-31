@@ -7,9 +7,12 @@ constructor(props){
     super(props);
     this.state={
         password:'',
-        confirmPassword:''
+        confirmpassword:''
     }
 
+}
+snackbarClose=(e)=>{
+  this.setState({snackbarOpen:false});
 }
 handleClick=()=>{
     this.props.history.push('/eno')
