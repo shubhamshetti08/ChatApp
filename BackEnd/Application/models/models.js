@@ -28,9 +28,7 @@ const userData= new Schema({
 })
 
 var register=mongoose.model('users',userData);
-// console.log("hjvcgfha",register);
-// function uModel(){}
-// module.exports=uModel;
+
 /**
  * @desc user login 
  * @param  -req,call - it contains the req and respond json file
@@ -133,3 +131,4 @@ exports.resetPassword = (req, call) => {
         })
     })
 }
+

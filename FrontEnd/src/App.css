@@ -1,0 +1,56 @@
+.login{
+    margin-top: 50px;
+    padding-left: 100;
+    margin-left: 200;
+    text-align: center
+}
+body{
+    background: url('./assets/images/download.jpeg');
+}
+.cbutton{
+   color: red;
+}
+
+ 
+.register{
+    margin-top: 100px;
+    border-color: 20ch,black;
+    text-align: center
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 460px;
+    margin-left: 460px;
+    padding-top: 4;
+    margin-top: 12px;
+}
+
+.card{
+    width:400px;
+    border: 2px solid aliceblue;
+    margin: auto;
+    
+}
+.lcard{
+    margin-top: 50px;
+    width:600px;
+    border: 2px solid aliceblue;
+    margin: auto;
+}
+.rcard{
+    width: 275px;
+    padding: 0;
+    margin-top: 180px;
+    margin-left: 520px;
+    border: 2px solid aliceblue;
+    text-align: center
+}
+.forgotpwd{
+    margin-top: 200px;
+    text-align: center;
+}
+.forgotpwd_head{
+    color:#4db6ac;
+
+}
