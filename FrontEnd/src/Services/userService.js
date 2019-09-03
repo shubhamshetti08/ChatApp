@@ -1,4 +1,7 @@
 var authServices={
-    register:'/register'
+    register:'/register',
+    login:'/login',
+    forgotPwd:'/forgotPwd',
+    resetPwd:'/resetPwd'
 }
 export default authServices;

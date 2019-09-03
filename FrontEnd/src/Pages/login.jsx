@@ -4,7 +4,10 @@ import TextField from '@material-ui/core/TextField';
 import { Card } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
-import controller from '../Controller/userController';
+import Controller from '../Controller/userController';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 //import { makeStyles } from '@material-ui/core/styles';
 export default class Login extends React.Component {
   constructor(props) {
@@ -27,7 +30,8 @@ export default class Login extends React.Component {
     }else if (this.state.password === null || this.state.password.length < 8) {
       this.setState({ snackbarOpen: true,snackbarMsg:"password should be min 8"  })
     }else{
-      controller.
+      Controller.login(this.state.email,this.state.password);
+      this.setState({ snackbarOpen: true,snackbarMsg:"login successfull"  })
     //this.props.history.push('/dashboard');
     }
   }
@@ -52,6 +56,20 @@ export default class Login extends React.Component {
   render() {
     return (
       <Card className="lcard">
+         <AppBar position="static" color="primary">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              
+              color="inherit"
+              aria-label="menu"
+            >
+            </IconButton>
+            <Typography variant="h6" color="inherit">
+              WELCOME TO LOGIN PAGE
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
@@ -92,6 +110,7 @@ export default class Login extends React.Component {
           </div>
           <div>
             <TextField
+            required
               id="outlined-pass-input"
               label="Password"
               type="password"

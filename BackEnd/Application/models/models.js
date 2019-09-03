@@ -148,4 +148,19 @@ exports.resetPassword = (req, call) => {
 }
 
 }
+exports.getAllUseres= (req, call) => {
+    try{
+    register.find({},(err,data)=>{
+        if(err){
+            call(err);
+        }
+        else{
+            call(null,data);
+        }
+    })
+}catch (err) {
+    res.send(err);
+}
+
+}
 

@@ -2,12 +2,16 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { Card } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import Controller from '../Controller/userController';
 export default class ForgotPwd extends React.Component {
   constructor(props) {
     super(props);
     this.state={
         email:''
     }
+  }
+  handleClick=()=>{
+    Controller.forgotPwd(this.state.email);
   }
   onChangeEmail=(e)=>{
     var  Email=e.target.value;

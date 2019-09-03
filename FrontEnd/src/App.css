@@ -54,3 +54,17 @@ body{
     color:#4db6ac;
 
 }
+.dcard{
+    margin-top: 5px;
+    height: 400px;
+    width: 250px;
+    margin-left: 20px;
+    border: 2px solid burlywood
+}
+.mcard{
+    height: 400px;
+    width: 900px;
+    margin-left: 350px;
+    margin-top: -405px;
+    border: 2px solid burlywood
+}

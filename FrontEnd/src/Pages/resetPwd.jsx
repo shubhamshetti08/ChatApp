@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Card } from '@material-ui/core';
+import Controller from '../Controller/userController';
+
 export default class ResetPwd extends React.Component{
 constructor(props){
     super(props);
@@ -15,7 +17,8 @@ snackbarClose=(e)=>{
   this.setState({snackbarOpen:false});
 }
 handleClick=()=>{
-    this.props.history.push('/eno')
+  Controller.resetPwd(this.state.password,this.state.confirmpassword);
+    //this.props.history.push('/eno')
 }
 render(){
     return(
