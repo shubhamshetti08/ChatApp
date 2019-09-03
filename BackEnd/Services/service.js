@@ -14,6 +14,7 @@ const model=require('../Application/models/models');
   * @return returning back to the model and checking  data or error
 */
 exports.login=(req,callback)=>{
+    try{
     //console.log(" in service",req.body)
     model.login(req,(err,data)=>
     {
@@ -25,6 +26,9 @@ exports.login=(req,callback)=>{
             callback(null,data);
         }
     })
+} catch (err) {
+    res.send(err);
+}
 }
 /**
   * @desc redirecting data to model
@@ -32,6 +36,7 @@ exports.login=(req,callback)=>{
   * @return returning back to the model and checking  data or error
 */
 exports.register=(req,callback)=>{
+    try{
     model.register(req,(err,data)=>{
         if(err){
             callback(err);
@@ -40,11 +45,14 @@ exports.register=(req,callback)=>{
             callback(null,data);
         }
     })
+}catch (err) {
+    res.send(err);
 }
 
-
+}
 
 exports.forgot=(req,callback)=>{
+    try{
     model.forgot(req,(err,data)=>{
         if(err){
             callback(err);
@@ -53,8 +61,12 @@ exports.forgot=(req,callback)=>{
             callback(null,data);
         }
     })
+}catch (err) {
+    res.send(err);
+}
 }
 exports.reset=(req,callback)=>{
+    try{
     model.resetPassword(req,(err,data)=>{
         if(err){
             callback(err);
@@ -63,5 +75,7 @@ exports.reset=(req,callback)=>{
             callback(null,data);
         }
     })
+}catch (err) {
+    res.send(err);
 }
-
+}

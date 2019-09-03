@@ -6,6 +6,7 @@ const jwt=require('jsonwebtoken');
  * @return returning if decrypted key matched  next callback else res callback
  */
 exports.varify = (req, res, next) => {
+    try{
     console.log("varify");
     var token = req.params.token;
     jwt.verify(token, "dggds", (err, payload) => {
@@ -16,4 +17,7 @@ exports.varify = (req, res, next) => {
             next();
         }
     })
+}catch (e) {
+    console.log(e);
+}
 }

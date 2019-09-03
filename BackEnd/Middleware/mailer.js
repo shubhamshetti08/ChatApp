@@ -1,5 +1,6 @@
 const nodemailer=require('nodemailer');
 exports.sendEmail = (email, subject, text) => {
+    try{
     console.log("sending mail")
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
@@ -23,4 +24,7 @@ exports.sendEmail = (email, subject, text) => {
             console.log("messege sent", info.envelope)
         }
     })
+}catch (e) {
+    console.log(e);
+}
 }

@@ -36,6 +36,7 @@ var register=mongoose.model('users',userData);
  */
 
 exports.login=(req,callback)=>{
+    try{
     //console.log("data is"+req.body)
     console.log(req.body.email)
     register.findOne({
@@ -55,6 +56,9 @@ exports.login=(req,callback)=>{
         })
     }    else callback("email and password misMatch"+err);
 })
+}catch (err) {
+    res.send(err);
+}
 }
 // exports.login = (req, call) => {
 //     register.findOne({
@@ -76,6 +80,7 @@ exports.login=(req,callback)=>{
  */
 
     exports.register = (req, callback) => {
+        try{
           console.log("data is",req.body)
         register.findOne({
             "email": req.body.email
@@ -103,12 +108,15 @@ exports.login=(req,callback)=>{
                
             }
         })
+    }catch (err) {
+        res.send(err);
     }
     
-
+    }
 
     
     exports.forgot=(req,callback)=>{
+        try{
         //console.log("data is",req)
         register.findOne({
             "email":req.body.email
@@ -117,8 +125,13 @@ exports.login=(req,callback)=>{
                 else callback(err);
         })
 
+}catch (err) {
+    res.send(err);
+}
+
 }
 exports.resetPassword = (req, call) => {
+    try{
     bcrypt.hash(req.body.password, 10, (err, encrypted) => {
         console.log(req.decoded.payload.id)
         register.updateOne({
@@ -130,5 +143,9 @@ exports.resetPassword = (req, call) => {
             else call(null,data);
         })
     })
+}catch (err) {
+    res.send(err);
+}
+
 }
 
