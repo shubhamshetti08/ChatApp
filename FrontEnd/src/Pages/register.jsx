@@ -38,6 +38,7 @@ export default class Register extends React.Component {
     else {
       Controller.register(this.state.firstName, this.state.lastName, this.state.email, this.state.password);
       this.setState({ snackbarOpen: true,snackbarMsg:"successfully registered"  })
+      this.props.history.push('/login')
     }
 
   }

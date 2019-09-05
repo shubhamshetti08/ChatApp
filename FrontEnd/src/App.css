@@ -1,23 +1,25 @@
-.login{
+.login {
     margin-top: 50px;
     padding-left: 100;
     margin-left: 200;
     text-align: center
 }
+
 body{
     background: url('./assets/images/download.jpeg');
 }
-.cbutton{
-   color: red;
+.cbutton {
+    color: red;
 }
 
- 
-.register{
+
+.register {
     margin-top: 100px;
-    border-color: 20ch,black;
+    border-color: 20ch, black;
     text-align: center
 }
-.button{
+
+.button {
     display: flex;
     justify-content: space-between;
     margin-right: 460px;
@@ -26,19 +28,21 @@ body{
     margin-top: 12px;
 }
 
-.card{
-    width:400px;
+.card {
+    width: 400px;
     border: 2px solid aliceblue;
     margin: auto;
-    
+
 }
-.lcard{
+
+.lcard {
     margin-top: 50px;
-    width:600px;
+    width: 600px;
     border: 2px solid aliceblue;
     margin: auto;
 }
-.rcard{
+
+.rcard {
     width: 275px;
     padding: 0;
     margin-top: 180px;
@@ -46,25 +50,33 @@ body{
     border: 2px solid aliceblue;
     text-align: center
 }
-.forgotpwd{
+
+.forgotpwd {
     margin-top: 200px;
     text-align: center;
 }
-.forgotpwd_head{
-    color:#4db6ac;
+
+.forgotpwd_head {
+    color: #4db6ac;
 
 }
-.dcard{
+
+.dcard {
     margin-top: 5px;
     height: 400px;
     width: 250px;
     margin-left: 20px;
     border: 2px solid burlywood
 }
-.mcard{
+
+.mcard {
     height: 400px;
     width: 900px;
     margin-left: 350px;
     margin-top: -405px;
     border: 2px solid burlywood
+}
+
+.logout {
+    margin-left: 200px;
 }

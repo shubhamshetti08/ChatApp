@@ -18,7 +18,7 @@ snackbarClose=(e)=>{
 }
 handleClick=()=>{
   Controller.resetPwd(this.state.password,this.state.confirmpassword);
-    //this.props.history.push('/eno')
+    this.props.history.push('/login')
 }
 render(){
     return(

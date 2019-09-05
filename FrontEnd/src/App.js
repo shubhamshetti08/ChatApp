@@ -3,9 +3,9 @@ import { BrowserRouter as Router,Route } from "react-router-dom";
 import Login from './Pages/login.jsx';
 import './App.css';
 import Register from './Pages/register.jsx';
-import ForgotPwd from './Pages/forgotPwd.jsx'
-import ResetPwd from './Pages/resetPwd.jsx'
-import Dashboard from './Components/dashboard'
+import ForgotPwd from './Pages/forgotPwd.jsx';
+import ResetPwd from './Pages/resetPwd.jsx';
+import Dashboard from './Pages/dashboard.jsx';
 class App extends Component {
   render() {
     return (

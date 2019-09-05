@@ -44,7 +44,7 @@ exports.login=(req,callback)=>{
           },(err,data)=>{
               console.log(data._id) 
          if(data){
-             console.log(req.body.password+'hell  '+data.password);
+             console.log(req.body.password+''+data.password);
         bcrypt.compare(req.body.password, data.password, (err, sucess) => {
             console.log(sucess)
             if (sucess) 

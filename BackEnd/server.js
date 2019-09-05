@@ -38,11 +38,36 @@ mongoose.connect(dbCon.url, {
     console.log('connection failed');
 })
 
-// app.get('/', (req, res)=> {
-//     res.send('Hello World')
-// })
-
-app.listen(4000,()=>{
+app.get('/', (req, res)=> {
+    res.send('Hello World')
+})
+const server=app.listen(4000,()=>{
     console.log('port 4000');
 })
+const io=require('socket.io').listen(server);
+io.sockets.on('connection',function(socket){
+    console.log("socket connected");
+    socket.on('createMessage',function(message){
+        chatController.message(message,(err,data)=>{
+            if(err){
+                console.log(message+'in server');
+                io.emit('newMessageSignal',message);
+            }
+        })
+        socket.on('disconnect',function(){
+            console.log("socket disconnected");
+            chatController.addMsg(req,(err,result)=>{
+                if(err){
+                    console.log(err);
+                }
+                else{
+                    console.log(null,result);
+                }
+                io.emit(req.sender,result);
+                io.emit(req.receiver,result)
+            })
+        })
+    })
+})
+
 module.exports=app;
