@@ -80,3 +80,20 @@ body{
 .logout {
     margin-left: 200px;
 }
+.displaymsg{
+    background-color:#b2ebf2;
+    border-radius: 10px;
+    width:150px;
+    padding: 8px;
+    margin-bottom: 10px;
+    float:right;
+    
+}
+.send{
+    background-color:blue;
+    border-radius: 10px;
+    width:150px;
+    padding: 8px;
+    margin-bottom: 10px; 
+    float: left;
+}

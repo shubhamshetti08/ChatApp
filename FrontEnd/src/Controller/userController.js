@@ -91,7 +91,26 @@ var controller = {
         })
         // return data;
         .catch(error => {
-            console.log("reset failed", error);
+            console.log("get all useres failed", error);
+            //return error;
+
+
+        })
+
+
+    },
+    getUserMsg() {
+        return axios.get(authServices.getUserMsg).then(response => {
+            console.log("all chats------", response.data);
+            if (response.status === 200) {
+                console.log("get all chats sucess");
+                return response.data;
+            }
+
+        })
+        // return data;
+        .catch(error => {
+            console.log(" get all chats failed", error);
             //return error;
 
 

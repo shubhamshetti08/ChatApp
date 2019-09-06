@@ -13,6 +13,7 @@ const bodyParser = require('body-parser')
 const routes = require('../BackEnd/Routes/routes');
 const dbCon = require('./Configuration/database.config');
 const expressValidator=require('express-validator');
+const chatController=require('./Controller/chatController')
 const app = express();
 require('dotenv').config();
 
@@ -46,16 +47,8 @@ const server=app.listen(4000,()=>{
 })
 const io=require('socket.io').listen(server);
 io.sockets.on('connection',function(socket){
-    console.log("socket connected");
-    socket.on('createMessage',function(message){
-        chatController.message(message,(err,data)=>{
-            if(err){
-                console.log(message+'in server');
-                io.emit('newMessageSignal',message);
-            }
-        })
-        socket.on('disconnect',function(){
-            console.log("socket disconnected");
+   
+         socket.on('NewMessage',function(req){
             chatController.addMsg(req,(err,result)=>{
                 if(err){
                     console.log(err);
@@ -68,6 +61,8 @@ io.sockets.on('connection',function(socket){
             })
         })
     })
+    io.on('disconnect',function(){
+        io.emit(req.receiver,result);
 })
 
 module.exports=app;
