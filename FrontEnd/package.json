@@ -7,6 +7,7 @@
     "axios": "^0.19.0",
     "nodemon": "^1.19.1",
     "react": "^16.9.0",
+    "react-card-scroll": "^2.2.4",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "0.9.5",
@@ -14,8 +15,10 @@
   },
   "devDependencies": {},
   "proxy": "http://localhost:4000",
+ 
   "scripts": {
     "start": "react-scripts start",
+    "server": "nodemon index.js --ignore client",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

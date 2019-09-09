@@ -66,7 +66,9 @@ body{
     height: 400px;
     width: 250px;
     margin-left: 20px;
-    border: 2px solid burlywood
+    border: 2px solid burlywood;
+    overflow-y: scroll;
+    
 }
 
 .mcard {
@@ -74,13 +76,14 @@ body{
     width: 900px;
     margin-left: 350px;
     margin-top: -405px;
-    border: 2px solid burlywood
+    border: 2px solid burlywood;
+    overflow-y: scroll;
+    
 }
-
 .logout {
     margin-left: 200px;
 }
-.displaymsg{
+/* .displaymsg{
     background-color:#b2ebf2;
     border-radius: 10px;
     width:150px;
@@ -88,12 +91,28 @@ body{
     margin-bottom: 10px;
     float:right;
     
-}
-.send{
+} */
+/* .send{
     background-color:blue;
     border-radius: 10px;
     width:150px;
     padding: 8px;
     margin-bottom: 10px; 
     float: left;
-}
+} */
+.SenderSide{
+    margin-right: 500px;
+    background-color:#b2ebf2;
+    border-radius: 20px;
+    width: 190px;
+    padding: 10px;
+    margin-bottom: 10px
+  }
+  .ReceiverSide{
+    background-color: #b2ebf2 ;
+    border-radius: 20px;
+    width: 190px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left :690px;
+  }

@@ -6,7 +6,6 @@ import Controller from '../Controller/userController'
 import '../App.css'
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
-
 export default class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +15,7 @@ export default class Register extends React.Component {
       email: '',
       password: '',
       snackbarOpen: false,
-      snackbarMsg: '',
-      
+      snackbarMsg: '',      
     }
   }
   snackbarClose = (e) => {
@@ -40,9 +38,7 @@ export default class Register extends React.Component {
       this.setState({ snackbarOpen: true,snackbarMsg:"successfully registered"  })
       this.props.history.push('/login')
     }
-
   }
-
   handleClick = () => {
     //let name=this.state.firstname;
     //console.log(name,"name");
