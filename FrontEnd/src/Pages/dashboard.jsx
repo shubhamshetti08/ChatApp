@@ -8,11 +8,12 @@ import { Card } from '@material-ui/core';
 import Controller from '../Controller/userController';
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:4000');
-// import Radio from '@material-ui/core/Radio';
+ import Radio from '@material-ui/core/Radio';
 // import RadioGroup from '@material-ui/core/RadioGroup';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 // import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
+import { RadioButton } from 'material-ui';
 export default class Dashboard extends React.Component {
   // export default function Dashboard (props){
   constructor(props) {
@@ -70,6 +71,8 @@ export default class Dashboard extends React.Component {
     this.props.history.push('/login');
   }
   handleMenuClick = (e) => {
+    var newColor = this.state.color ==='' ? 'burlywood' : '';
+    this.setState({ color : newColor})
     var Receiver = e.target.textContent;
     console.log("rec-------", Receiver);
     this.setState({
@@ -123,7 +126,8 @@ export default class Dashboard extends React.Component {
       if (key.email !== localStorage.getItem('Sender')) {
         return (
           <div>
-            <MenuItem onClick={this.handleMenuClick}>{key.firstName}</MenuItem>
+            {/* <MenuItem style={{background:this.state.color}} onClick={this.handleMenuClick}>{key.firstName}</MenuItem> */}
+            <RadioButton style={{background:this.state.color}} onClick={this.handleMenuClick}>{key.firstName}</RadioButton> 
           </div>
         )
       }
